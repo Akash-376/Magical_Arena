@@ -11,18 +11,20 @@ import org.junit.Test;
  */
 public class MagicalGameRunnerTest 
 {
-	
-	/**
-	 * Tests the behavior of the Player class when taking damage.
-	 * Verifies that the player's health is reduced correctly.
-	 */
-	 @Test
-	 public void testPlayerTakeDamage() {
-	      Player player = new Player("TestPlayer", 20, 5, 10);
-	      player.takeDamage(8);
-	      assertEquals(12, player.getHealth());
-	  }
-	  
+	  /**
+      * Tests the initialization of the Arena class.
+      * Verifies that the Arena is initialized with the correct players.
+      */
+      @Test
+      public void testArenaInitialization() {
+          Player player1 = new Player("Player1", 20, 5, 10);
+          Player player2 = new Player("Player2", 25, 10, 5);
+
+          Arena arena = new Arena(player1, player2);
+
+          assertEquals(player1, arena.getPlayer_A());
+          assertEquals(player2, arena.getPlayer_B());
+      }  
 	  /**
 	   * Tests the isAlive method of the Player class.
 	   * Verifies that the method correctly identifies whether a player is alive or not.

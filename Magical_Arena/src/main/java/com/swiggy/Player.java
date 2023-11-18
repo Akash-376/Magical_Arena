@@ -73,7 +73,7 @@ public class Player {
      * Reduce the player's health based on the damage received.
      * @param damage The amount of damage to be taken.
      */
-    public void takeDamage(int damage) {
+    private void takeDamage(int damage) {
         health = Math.max(0, health - damage);
     }
 

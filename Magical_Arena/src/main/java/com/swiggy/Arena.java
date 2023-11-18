@@ -19,8 +19,20 @@ public class Arena {
         this.player_A = player_A;
         this.player_B = player_B;
     }
+    
+    
 
-    /**
+    public Player getPlayer_A() {
+		return player_A;
+	}
+
+	public Player getPlayer_B() {
+		return player_B;
+	}
+
+
+
+	/**
      * Initiates the match in the arena and contains the game logic for player interactions.
      */
     public void startMatch() {
@@ -30,7 +42,7 @@ public class Arena {
     		System.out.println("Both players with zero health can not fight");
     		return;
     	}
-    	System.out.println("-------- Match Start --------\n");
+    	System.out.println("-------- Game Start --------\n");
         System.out.println(player_A.getName() + " (Health: " + player_A.getHealth() + ") VS " + player_B.getName() + " (Health: " + player_B.getHealth() + ")\n");
 
         // Determine the player with lower health to attack first
@@ -47,7 +59,7 @@ public class Arena {
             defender = temp;
         }
         
-        System.out.println("\n***  Match End ***\n");
+        System.out.println("\n***  Game Over ***\n");
         System.out.println("*** Final result ***\n");
         System.out.println(attacker.getHealth()==0? defender.getName()+" won " : attacker.getName()+" won ");
         
