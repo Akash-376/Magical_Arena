@@ -20,8 +20,15 @@ public class Player {
      */
     public Player(String name, int health, int strength, int attack) {
     	this.name = name;
+    	// default health is 10 if user provide less than 0 health
+    	if(health<0) health = 10;
         this.health = health;
+        
+        // default strength is 1 if user provide 0 or less than 0 strength
+        if(strength<=0) strength = 1;
         this.strength = strength;
+        // default attack is 1 if user provide 0 or less than 0 attack
+        if(attack<=0) attack = 1;
         this.attack = attack;
     }
     

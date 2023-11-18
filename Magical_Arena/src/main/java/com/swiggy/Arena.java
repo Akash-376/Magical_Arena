@@ -25,7 +25,11 @@ public class Arena {
      */
     public void startMatch() {
         // Game logic here
-    	
+    	// if both player have zero health
+    	if(player_A.getHealth() ==0 && player_B.getHealth() ==0) {
+    		System.out.println("Both players with zero health can not fight");
+    		return;
+    	}
     	System.out.println("-------- Match Start --------\n");
         System.out.println(player_A.getName() + " (Health: " + player_A.getHealth() + ") VS " + player_B.getName() + " (Health: " + player_B.getHealth() + ")\n");
 
