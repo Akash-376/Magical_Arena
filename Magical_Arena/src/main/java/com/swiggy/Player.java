@@ -46,6 +46,49 @@ public class Player {
 	public void setAttack(int attack) {
 		this.attack = attack;
 	}
+		
+	
+	/**
+     * Reduce the player's health based on the damage received.
+     * @param damage The amount of damage to be taken.
+     */
+    public void takeDamage(int damage) {
+        health = Math.max(0, health - damage);
+    }
+
+    /**
+     * Check if the player is alive.
+     * @return True if the player's health is greater than 0, false otherwise.
+     */
+    public boolean isAlive() {
+        return health > 0;
+    }
+	
+	/**
+     * Perform an attack on another player.
+     * @param defender The player being attacked.
+     */
+    public void attack(Player defender) {
+        // Roll the attack dice using the static method in the Dice class
+        int attackRoll = Dice.roll();
+
+        // Calculate the damage inflicted by the attacker
+        int damage = attackRoll * attack;
+
+        // Roll the defending dice using the static method in the Dice class
+        int defendRoll = Dice.roll();
+
+        // Calculate the defense of the defender
+        int defense = defendRoll * defender.getStrength();
+
+        // Calculate the net damage after defending
+        int netDamage = Math.max(0, damage - defense);
+
+        // Reduce the health of the defender
+        defender.takeDamage(netDamage);
+    }
+    
+    
     
     
 }
