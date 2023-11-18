@@ -6,10 +6,11 @@ package com.swiggy;
  * which determine their capabilities in the game.
  */
 public class Player {
-	
+	private String name;
 	private int health;
     private int strength;
     private int attack;
+    private int netDamage;
 
     /**
      * Constructs a new player with the specified health, strength, and attack attributes.
@@ -17,10 +18,19 @@ public class Player {
      * @param strength The initial strength of the player.
      * @param attack The initial attack of the player.
      */
-    public Player(int health, int strength, int attack) {
+    public Player(String name, int health, int strength, int attack) {
+    	this.name = name;
         this.health = health;
         this.strength = strength;
         this.attack = attack;
+    }
+    
+    public String getName() {
+    	return name;
+    }
+    
+    public void setName(String name) {
+    	this.name = name;
     }
 
 	public int getHealth() {
@@ -45,6 +55,10 @@ public class Player {
 
 	public void setAttack(int attack) {
 		this.attack = attack;
+	}
+	
+	public int getNetDamage() {
+		return netDamage;
 	}
 		
 	
@@ -82,7 +96,8 @@ public class Player {
         int defense = defendRoll * defender.getStrength();
 
         // Calculate the net damage after defending
-        int netDamage = Math.max(0, damage - defense);
+        netDamage = Math.max(0, damage - defense);
+        
 
         // Reduce the health of the defender
         defender.takeDamage(netDamage);

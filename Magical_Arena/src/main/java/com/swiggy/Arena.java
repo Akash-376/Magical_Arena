@@ -6,6 +6,7 @@ package com.swiggy;
  */
 public class Arena {
 	
+	private int rounds = 1;
 	private Player player_A;
     private Player player_B;
 
@@ -24,6 +25,56 @@ public class Arena {
      */
     public void startMatch() {
         // Game logic here
+    	
+    	System.out.println("-------- Match Start --------\n");
+        System.out.println(player_A.getName() + " (Health: " + player_A.getHealth() + ") VS " + player_B.getName() + " (Health: " + player_B.getHealth() + ")\n");
+
+        // Determine the player with lower health to attack first
+        Player attacker = (player_A.getHealth() < player_B.getHealth()) ? player_A : player_B;
+        Player defender = (attacker.equals(player_A)) ? player_B : player_A;
+
+        while (player_A.isAlive() && player_B.isAlive()) {
+            attacker.attack(defender);
+            printMatchStatus(attacker, defender);
+
+            // Swap attacker and defender for the next round
+            Player temp = attacker;
+            attacker = defender;
+            defender = temp;
+        }
+        
+        System.out.println("\n***  Match End ***\n");
+        System.out.println("*** Final result ***\n");
+        System.out.println(attacker.getHealth()==0? defender.getName()+" won " : attacker.getName()+" won ");
+        
+        
+    }
+    
+    
+    /**
+     * Prints the status of the match after each attack round.
+     *
+     * @param attacker The player initiating the attack.
+     * @param defender The player defending against the attack.
+     */
+    private void printMatchStatus(Player attacker, Player defender) {
+        // Increase the round count and display the round number
+        System.out.println("Round : " + rounds++);
+
+        // Display the attack information, including attacker and defender names
+        System.out.println(attacker.getName() + " attacks " + defender.getName() + "!\n");
+
+        // Display the net damage caused by the attacker
+        System.out.println("Net Damage: " + attacker.getNetDamage());
+
+        // Display the health of the defender after the attack
+        System.out.println(defender.getName() + " Health: " + defender.getHealth());
+
+        // Display the health of the attacker after the attack
+        System.out.println(attacker.getName() + " Health: " + attacker.getHealth());
+
+        // Separate each round's information with a line of dashes for clarity
+        System.out.println("---------------------------\n");
     }
     
     
