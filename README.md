@@ -8,6 +8,7 @@
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
+- [How to run](#How_to_run)
 - [Player Class](#Player_Class)
 - [Arena Class](#Arena_Class)
 - [Dice Class](#Dice_Class)
@@ -18,11 +19,15 @@
 To run a Maven project without an integrated development environment (IDE) or editor, you can use the command line. Here are the steps to run your Maven project:
 - Maven Installation:
   Make sure you have Maven installed on your system. You can download it from Apache Maven and follow the installation instructions.
+
+## How_to_run
+**Extract the Zip Folder:**
+   Extract the zip folder that has been shared with you to a location on your machine.
 - Navigate to the Project Directory:
-  Open a command prompt or terminal and navigate to the root directory of your Maven project where pom.xml file is visible.
+  Open a command prompt or terminal and navigate to the root directory of your Maven project where **pom.xml file is visible**.
   
   example:- cd Magical_Arena\Magical_Arena
-  
+
 - Build the Project:
   Run the following Maven command to compile your project, run tests, and package it
   ```
