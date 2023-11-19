@@ -1,0 +1,17 @@
+package com.swiggy;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        Player p1 = new Player("Jack", 20, 5, 10);
+        Player p2 = new Player("Akash", 25, 10, 5);
+        
+        Arena arena = new Arena(p1, p2);
+        arena.startMatch();
+    }
+}

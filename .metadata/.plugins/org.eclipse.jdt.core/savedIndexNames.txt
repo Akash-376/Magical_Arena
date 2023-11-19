@@ -1,0 +1,6 @@
+INDEX VERSION 1.132+C:\Users\HP\OneDrive\Desktop\Magical_Arena\.metadata\.plugins\org.eclipse.jdt.core
+3607561075.index
+1865797976.index
+3922559381.index
+572381425.index
+1370727694.index

@@ -1,0 +1,62 @@
+package com.swiggy;
+
+/**
+ * The Arena class represents the magical arena where players engage in matches.
+ * It takes two Player objects and facilitates the progression of matches.
+ */
+public class Arena {
+	
+	private int rounds = 1;
+	private Player player_A;
+    private Player player_B;
+
+    /**
+     * Constructs a new arena with the specified players.
+     * @param player_A The first player participating in the match.
+     * @param player_B The second player participating in the match.
+     */
+    public Arena(Player player_A, Player player_B) {
+        this.player_A = player_A;
+        this.player_B = player_B;
+    }
+
+    /**
+     * Initiates the match in the arena and contains the game logic for player interactions.
+     */
+    public void startMatch() {
+        // Game logic here
+    	
+    	System.out.println("-------- Match Start --------");
+        System.out.println(player_A.getName() + " (Health: " + player_A.getHealth() + ") VS " + player_B.getName() + " (Health: " + player_B.getHealth() + ")");
+
+        // Determine the player with lower health to attack first
+        Player attacker = (player_A.getHealth() < player_B.getHealth()) ? player_A : player_B;
+        Player defender = (attacker.equals(player_A)) ? player_B : player_A;
+
+        while (player_A.isAlive() && player_B.isAlive()) {
+            attacker.attack(defender);
+            printMatchStatus(attacker, defender);
+
+            // Swap attacker and defender for the next round
+            Player temp = attacker;
+            attacker = defender;
+            defender = temp;
+        }
+        
+        System.out.println("-------- Final result --------\n");
+        System.out.println(attacker.getHealth()==0? defender.getName()+" won " : attacker.getName()+" won ");
+        
+        System.out.println("-------- Match End --------");
+    }
+    
+    private void printMatchStatus(Player attacker, Player defender) {
+    	System.out.println("Round : "+ rounds++);
+    	System.out.println("net damage : " + attacker.netDamage);
+        System.out.println(attacker.getName() + " attacks " + defender.getName() + "!");
+        System.out.println(defender.getName() + " Health: " + defender.getHealth());
+        System.out.println(attacker.getName() + " Health: " + attacker.getHealth());
+        System.out.println("---------------------------");
+    }
+    
+    
+}
