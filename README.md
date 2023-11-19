@@ -23,10 +23,9 @@ To run a Maven project without an integrated development environment (IDE) or ed
 ## How_to_run
 **Extract the Zip Folder:**
    Extract the zip folder that has been shared with you to a location on your machine.
-- Navigate to the Project Directory:
+- Navigate to the Project Directory: 
   Open a command prompt or terminal and navigate to the root directory of your Maven project where **pom.xml file is visible**.
-  
-  example:- cd Magical_Arena\Magical_Arena
+  By using the command :- **cd folder_name**
 
 - Build the Project:
   Run the following Maven command to compile your project, run tests, and package it
