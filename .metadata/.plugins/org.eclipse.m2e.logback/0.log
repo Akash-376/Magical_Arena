@@ -395,3 +395,4 @@
 2023-11-19 12:25:20,538 [Worker-9: Launching MagicalGameRunnerTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\HP\OneDrive\Desktop\Magical_Arena\Magical_Arena\src\main\resources
 2023-11-19 12:25:20,544 [Worker-9: Launching MagicalGameRunnerTest] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2023-11-19 12:25:20,545 [Worker-9: Launching MagicalGameRunnerTest] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\HP\OneDrive\Desktop\Magical_Arena\Magical_Arena\src\test\resources
+2023-11-19 12:31:10,425 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
